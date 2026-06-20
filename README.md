@@ -1,126 +1,81 @@
 # Ecommerce Database Analysis using PostgreSQL
 
 ## Project Overview
+This project analyzes an Ecommerce dataset using PostgreSQL.
 
-This project analyzes the Brazilian Olist Ecommerce Dataset using PostgreSQL.
+The project includes:
 
-The objective was to build a relational database, import raw CSV files, establish relationships using primary and foreign keys, generate an ER diagram, and perform business analytics using SQL queries.
+- Data Import and Cleaning
+- Database Design
+- Primary and Foreign Key Relationships
+- ER Diagram Creation
+- SQL Analytics Queries
+- Business Insights
 
 ---
 
 ## Dataset Information
 
-Dataset: Olist Brazilian Ecommerce Dataset
+Dataset: Brazilian Ecommerce Dataset (Olist)
 
 Tables Used:
 
-* Customers
-* Orders
-* Order Items
-* Products
-* Sellers
-* Payments
-* Reviews
-* Category Translation
-
-Total Orders: 99,441
-
----
-
-## Technologies Used
-
-* PostgreSQL
-* pgAdmin 4
-* SQL
-* GitHub
+- Customers
+- Orders
+- Order Items
+- Products
+- Sellers
+- Payments
+- Reviews
+- Categories
 
 ---
 
 ## Database Schema
 
-The database was normalized into multiple related tables.
+Primary Keys:
+- customer_id
+- order_id
+- product_id
+- seller_id
 
-### Main Relationships
+Foreign Keys:
+- orders.customer_id → customers.customer_id
+- payments.order_id → orders.order_id
+- order_items.order_id → orders.order_id
+- order_items.product_id → products.product_id
+- order_items.seller_id → sellers.seller_id
 
-* Customers → Orders
-* Orders → Payments
-* Orders → Reviews
-* Orders → Order Items
-* Products → Order Items
-* Sellers → Order Items
-* Categories → Products
+---
 
-ER Diagram:
+## ER Diagram
 
-(Add ER_Diagram.png after uploading)
+See ER_Diagram.png
 
 ---
 
 ## Analytics Performed
 
-### 1. Total Orders Analysis
+1. Total Orders
+2. Revenue by Payment Type
+3. Top Selling Products
+4. Orders by State
+5. Average Payment Value
+6. Top Sellers
 
-Purpose:
-Determine the total number of orders placed.
-
-Business Insight:
-The platform processed more than 99,000 orders, indicating large-scale ecommerce activity.
-
-### 2. Revenue by Payment Type
-
-Purpose:
-Identify the most commonly used payment methods and revenue contribution.
-
-Business Insight:
-Certain payment methods contribute significantly more revenue than others.
-
-### 3. Top Selling Products
-
-Purpose:
-Find products with the highest sales volume.
-
-Business Insight:
-A small group of products drives a large portion of sales.
-
-### 4. Orders by State
-
-Purpose:
-Analyze geographic distribution of customers.
-
-Business Insight:
-Customer demand is concentrated in specific states.
-
-### 5. Average Payment Value
-
-Purpose:
-Measure average customer spending per transaction.
-
-Business Insight:
-Provides understanding of customer purchasing behavior.
-
-### 6. Top Sellers
-
-Purpose:
-Identify highest-performing sellers.
-
-Business Insight:
-Top sellers contribute a substantial portion of marketplace sales.
+Screenshots available in Analytics folder.
 
 ---
 
-## Key SQL Concepts Used
+## Tools Used
 
-* SELECT
-* JOIN
-* GROUP BY
-* ORDER BY
-* Aggregate Functions
-* Primary Keys
-* Foreign Keys
-* Data Normalization
+- PostgreSQL
+- pgAdmin 4
+- SQL
+- GitHub
 
 ---
 
-## Conclusion
+## Author
 
-This project demonstrates database design, data modeling, SQL querying, relationship management, and business analytics using PostgreSQL. The project showcases practical skills required for Data Analyst and SQL Developer roles.
+Uday Kumar Peela
