@@ -1,0 +1,58 @@
+Query 1
+
+Total Orders :
+
+SELECT COUNT(*)
+FROM orders;
+
+Query 2
+
+Revenue by Payment Type :
+
+SELECT payment_type,
+ROUND(SUM(payment_value),2) revenue
+FROM payments
+GROUP BY payment_type
+ORDER BY revenue DESC;
+
+Query 3
+
+Top 10 Selling Products :
+
+SELECT product_id,
+COUNT(*) total_sales
+FROM order_items
+GROUP BY product_id
+ORDER BY total_sales DESC
+LIMIT 10;
+
+Query 4
+
+Orders by State :
+
+SELECT c.customer_state,
+COUNT(o.order_id) total_orders
+FROM customers c
+JOIN orders o
+ON c.customer_id = o.customer_id
+GROUP BY c.customer_state
+ORDER BY total_orders DESC;
+
+Query 5
+
+Average Payment Value :
+
+SELECT ROUND(AVG(payment_value),2)
+AS avg_payment
+FROM payments;
+
+Query 6
+
+Top Sellers :
+
+SELECT seller_id,
+COUNT(*) total_sales
+FROM order_items
+GROUP BY seller_id
+ORDER BY total_sales DESC
+LIMIT 10;
